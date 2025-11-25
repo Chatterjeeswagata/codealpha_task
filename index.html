@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">My Image Gallery</h1>
+
+<div class="gallery">
+    <img src="https://www.zastavki.com/pictures/originals/2014/Nature___Beach_Beach_of_black_sand_058712_.jpg"width="300" alt="">
+    <img src="https://english.cdn.zeenews.com/sites/default/files/GRqXAx9bMAgXaEw.jpeg"width="300" alt="">
+    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"width="300" alt="">
+    <img src="https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?cs=srgb&dl=pexels-daniel-reche-3616956.jpg&fm=jpg"width="300" alt="">
+    <img src="https://wallpapers.com/images/hd/captivating-beauty-of-a-black-rose-55d5rbry6o0kuler.jpg"width="300" alt="">
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img"
+    <div class="nav">
+        <button onclick="prevImg()">&#10094;</button>
+        <button onclick="nextImg()">&#10095;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
