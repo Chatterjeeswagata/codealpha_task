@@ -1,70 +1,77 @@
-body {
-    font-family: Arial, sans-serif;
-    background:#eef1f6;
+* {
     margin: 0;
-    padding: 20px;
-    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
-    color:red;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.06);
-    box-shadow: 0 4px 15px (white);
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
+body {
+    background: #dfe6e9;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    height: 100vh;
 }
 
-.lightbox img {
-    width: 70%;
-    max-height: 80%;
+.calculator {
+    width: 300px;
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #0005;
+}
+
+#display {
+    width: 100px%;
+    height: 60px;
+    background: #000;
+    color: #0f0;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    border: none;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.close {
-    color: white;
-    font-size: 40px;
-    position: absolute;
-    top: 20px;
-    right: 40px;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background: #636e72;
+    color: #fff;
+    padding: 18px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+    transition: .2s;
 }
 
-.nav button {
-    margin: 20px;
-    padding: 10px 20px;
-    font-size: 20px;
-    cursor: pointer;
+.btn:hover {
+    opacity: 0.75;
+}
+
+.operator {
+    background: #ff9f43;
+}
+
+.equal {
+    background: #00cec9;
+    grid-row: span 2;
+}
+
+.clear {
+    background: #d63031;
+}
+
+.delete {
+    background: #0984e3;
+}
+
+.zero {
+    grid-column: span 2;
 }

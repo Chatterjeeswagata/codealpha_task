@@ -1,28 +1,26 @@
-let currentIndex = 0;
-let images = document.querySelectorAll(".gallery img");
+let display = document.getElementById("display");
 
-images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-        currentIndex = index;
-        openLightbox(img.src);
-    });
+let buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        let value = button.textContent;
+
+        if (value === "C") {
+            display.value = "";
+        }
+        else if (value === "DEL") {
+            display.value = display.value.slice(0, -1);
+        }
+        else if (value === "=") {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                display.value = "Error";
+            }
+        }
+        else {
+            display.value += value;
+        }
+    });
 });
-
-function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-}
-
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
-
-function nextImg() {
-    currentIndex = (currentIndex + 1) % images.length;
-    document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-
-function prevImg() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
